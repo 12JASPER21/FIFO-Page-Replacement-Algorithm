@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFO Page Replacement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <div class="main-wrapper">
+        <header>
+            <h1>FIFO Page Replacement</h1>
+            <p class="subtitle">Operating Systems Project • CSP108</p>
+        </header>
+
+        <div class="glass-panel main-panel">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="availablePages">Input String</label>
+                    <input type="text" id="availablePages" placeholder="e.g. A B C D E">
+                    <small>Space separated values</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="referenceString">Reference String</label>
+                    <input type="text" id="referenceString" placeholder="e.g. A B A C A D">
+                    <small>Must be part of Input String</small>
+                    <div id="error-message" class="error-msg">Error: Invalid reference values.</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="frameCount">Frames</label>
+                    <input type="number" id="frameCount" placeholder="3" min="1" max="10">
+                    <small>Max 10 frames</small>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="runSimulation()">
+                    <span>▶ Run Simulation</span>
+                </button>
+                <button class="btn btn-secondary" onclick="clearAll()">
+                    <span>↺ Reset</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="simulation-result" class="results-area"></div>
+    </div>
+
+    <script src="func.js"></script>
+</body>
+</html>
