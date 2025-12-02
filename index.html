@@ -6,6 +6,7 @@
     <title>FIFO Page Replacement</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -41,8 +42,8 @@
             </div>
 
             <div class="button-group">
-                <button class="btn btn-primary" onclick="runSimulation()">
-                    <span>▶ Run Simulation</span>
+                <button class="btn btn-primary" onclick="initSimulation()">
+                    <span>▶ Load Simulation</span>
                 </button>
                 <button class="btn btn-secondary" onclick="clearAll()">
                     <span>↺ Reset</span>
@@ -51,6 +52,32 @@
         </div>
 
         <div id="simulation-result" class="results-area"></div>
+
+        <div id="controls-area" class="controls-area" style="display: none;">
+            
+            <div class="glass-panel explanation-panel">
+                <div class="exp-title">Current Step Info</div>
+                <div id="step-text" class="exp-text">Press Play to start...</div>
+            </div>
+
+            <div class="glass-panel control-deck">
+                <div class="speed-control">
+                    <label>Speed:</label>
+                    <select id="speedSelect" onchange="updateSpeed()">
+                        <option value="1500">Slow</option>
+                        <option value="800" selected>Normal</option>
+                        <option value="300">Fast</option>
+                    </select>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn-icon" onclick="prevStep()"><i class="fas fa-step-backward"></i></button>
+                    <button class="btn-icon" id="playPauseBtn" onclick="togglePlay()"><i class="fas fa-play"></i></button>
+                    <button class="btn-icon" onclick="nextStep()"><i class="fas fa-step-forward"></i></button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="func.js"></script>
